@@ -8,6 +8,7 @@ const cors = require('cors');
 const dbConfig =require('./db/database');
 const noteRoutes =require('./routes/note.router');
 const teacherRoutes =require('./routes/teacher.routes');
+const courseRoutes =require('./routes/course.routes');
 
 
 mongoose.Promise =global.Promise;
@@ -30,12 +31,11 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 const userRoute = require('./routes/student.routes')
-//const gohome = require('./routes/home')
-
 
 app.use('/admin', userRoute);
 app.use('/api/notes',noteRoutes);
 app.use('/teacher',teacherRoutes);
+app.use('/course',courseRoutes);
 
 const port = process.env.PORT || 8080;
 

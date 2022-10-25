@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;1,200;1,400;1,500&family=Open+Sans&family=Roboto:wght@700&display=swap');
 
 body{
-    background-color: ;
+    background-color: rgb(236, 170, 84);
     font-family: 'Josefin Sans', sans-serif;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
@@ -16,20 +16,18 @@ body{
 .btn.btn-success{
    
     border: none;
-    background-color:#532be2;
+    background-color:#349766;
     display: block;
     color: white;
     text-align: center;
     margin: 10px 100px;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
 }
 
 form{
     padding:0 3em ;
 }
-
-
 
 #login.title>span{
     font-size: .8em;

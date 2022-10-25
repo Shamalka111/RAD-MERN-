@@ -87,14 +87,17 @@ return(
         <div className='row'>
         <div className='col-md-2'></div>
         <div className='col-md-8 text-center'>
-            <button className='btn btn-warning' >Add Student</button>         
+            <button className='btn btn-warning' >Add Student</button>  
+            <br/>
+            <br/>
+            <button className="btn btn-primary"><Link class="nav-link" to='/view-student' >View Student</Link></button>       
         </div>
         <div className='col-md-2'></div>
         </div>
         </form>
 
             <div className='col-md-8 text-center'>
-            <button className="btn btn-primary"><Link class="nav-link" to='/view-student' >View Student</Link></button>
+            
             </div>
         </div>
 

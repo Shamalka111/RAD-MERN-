@@ -29,7 +29,7 @@ const ViewStudent=()=>{
     return(
 
         <div className='container forms'>
-        <button className="btn btn-primary"><Link class="nav-link" to='/add-student' >Add Student</Link></button>    
+        
         <div className='row'>
         <div className='col-md-12 text-center'><h2>List Student</h2></div>
         
@@ -62,6 +62,9 @@ const ViewStudent=()=>{
             </tbody>
 
         </table>
+        <div>
+            <button className="btn btn-primary"><Link class="nav-link" to='/add-student' >Add Student</Link></button>    
+        </div>
         
         </div>
     )

@@ -3,46 +3,46 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 
-const EditStudent=()=>{
+const EditCourse=()=>{
 
     const {id} = useParams();
     const history = useNavigate();
-    const [student, SetStudent]=useState((
+    const [course, SetCourse]=useState((
         {
-            'first_name':'',
-            'last_name':'',
-            'age':'',
-            'address':'',
+            'courseName':'',
+            'noOfCredits':'',
+            'duration': '',
+            'conductedBy':'',
         }
     ))
     const [message, setMessage]=useState('');
 
-    const{first_name,last_name,age,address}=student;
+    const{courseName,noOfCredits,duration,conductedBy}=course;
     
 
     useEffect(()=>{
-        loadStudent();     
+        loadCourse();     
     },
     []
     )
 
-    const loadStudent=async()=>{
-        const result = await axios.get('http://localhost:8080/admin/student/'+id);
-        SetStudent(result.data)
+    const loadCourse=async()=>{
+        const result = await axios.get('http://localhost:8080/course/course/'+id);
+        SetCourse(result.data)
     }
    
     const HandleChange=((e)=>{
-        SetStudent({...student,[e.target.name]: e.target.value})
+        SetCourse({...course,[e.target.name]: e.target.value})
     })
 
     const submitForm=async(e)=>{
         e.preventDefault()
     
-        await axios.put('http://localhost:8080/admin/update-student/'+id,student)
+        await axios.put('http://localhost:8080/course/update-course/'+id,course)
         .then((result)=>{
     
             setMessage("Successfully Updated");
-            history('/');
+            history('/view-course');
     
         }).catch((err)=>{
             alert('Something went Wrong!');
@@ -54,7 +54,7 @@ const EditStudent=()=>{
         <div className='container forms'>
         <form onSubmit={e => submitForm(e) }>
             <div className='row'>
-                <div className='col-md-12 text-center'><h2>Edit Student</h2></div>
+                <div className='col-md-12 text-center'><h2>Edit Course</h2></div>
             </div>
 
             <div className='row'>
@@ -62,25 +62,16 @@ const EditStudent=()=>{
             </div>
             <div className='row'>
             <div className='col-md-2'></div>
-            <div className='col-md-4'>First Name</div>
-            <div className='col-md-4'><input type="text" name='first_name' value={first_name}
+            <div className='col-md-4'>Course Name</div>
+            <div className='col-md-4'><input type="text" name='courseName' value={courseName}
             onChange={e=>HandleChange(e)} className='form-control' /></div>
             <div className='col-md-2'></div>
             </div>
 
             <div className='row'>
             <div className='col-md-2'></div>
-            <div className='col-md-4'>Last Name</div>
-            <div className='col-md-4'><input type="text" name='last_name' value={last_name} 
-            onChange={e=>HandleChange(e)} className='form-control' /></div>
-            <div className='col-md-2'></div>
-            </div>
-
-
-            <div className='row'>
-            <div className='col-md-2'></div>
-            <div className='col-md-4'>Age</div>
-            <div className='col-md-4'><input type="number" name='age' value={age} 
+            <div className='col-md-4'>No of Credits</div>
+            <div className='col-md-4'><input type="number" name='noOfCredits' value={noOfCredits} 
             onChange={e=>HandleChange(e)} className='form-control' /></div>
             <div className='col-md-2'></div>
             </div>
@@ -88,8 +79,17 @@ const EditStudent=()=>{
 
             <div className='row'>
             <div className='col-md-2'></div>
-            <div className='col-md-4'>Address</div>
-            <div className='col-md-4'><input type="text" name='address' value={address} 
+            <div className='col-md-4'>Duration</div>
+            <div className='col-md-4'><input type="text" name='duration' value={duration} 
+            onChange={e=>HandleChange(e)} className='form-control' /></div>
+            <div className='col-md-2'></div>
+            </div>
+
+
+            <div className='row'>
+            <div className='col-md-2'></div>
+            <div className='col-md-4'>conductedBy</div>
+            <div className='col-md-4'><input type="text" name='conductedBy' value={conductedBy} 
             onChange={e=>HandleChange(e)} className='form-control' /></div>
             <div className='col-md-2'></div>
             </div>
@@ -98,7 +98,7 @@ const EditStudent=()=>{
             <div className='row'>
             <div className='col-md-2'></div>
             <div className='col-md-8 text-center'>
-                <button className='btn btn-warning' >Edit Student</button>         
+                <button className='btn btn-warning' >Edit Course</button>         
             </div>
             <div className='col-md-2'></div>
             </div>
@@ -108,4 +108,4 @@ const EditStudent=()=>{
     )
 }
 
-export default EditStudent;
+export default EditCourse;
