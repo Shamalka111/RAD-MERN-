@@ -23,8 +23,6 @@ const Menu=()=>{
                 <li className="nav-item">
                 <Link className="nav-link" to='/teacher' >Teacher</Link>
                 </li>
-            
-            
             </ul>
             
             </div>

@@ -38,7 +38,7 @@ const submitForm= (e)=>{
 return(
 
         <div className='container forms'>
-            <button className="btn btn-primary"><Link class="nav-link" to='/view-course' >View Course</Link></button>
+            {/* <button className="btn btn-primary"><Link class="nav-link" to='/view-course' >View Course</Link></button> */}
             <form onSubmit={e => submitForm(e)}>
         <div className='row'>
         <div className='col-md-12 text-center'><h2>Add Course</h2></div>

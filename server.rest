@@ -1,0 +1,13 @@
+GET http://localhost:8080/notes/
+
+###
+POST http://localhost:8080/notes/add-note
+
+
+Content-Type: application/json
+
+{
+     "title": "dfdfdf",
+     "description" :  "abcdfdf",
+}
+
