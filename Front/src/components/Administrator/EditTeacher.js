@@ -27,7 +27,7 @@ const EditTeacher=()=>{
     )
 
     const loadTeacher=async()=>{
-        const result = await axios.get('http://localhost:8080/admin/teacher/'+id);
+        const result = await axios.get('http://localhost:8080/teacher/teacher/'+id);
         SetTeacher(result.data)
     }
    
@@ -38,11 +38,11 @@ const EditTeacher=()=>{
     const submitForm=async(e)=>{
         e.preventDefault()
     
-        await axios.put('http://localhost:8080/admin/update-teacher/'+id,teacher)
+        await axios.put('http://localhost:8080/teacher/update-teacher/'+id,teacher)
         .then((result)=>{
     
             setMessage("Successfully Updated");
-            history('/');
+            history('/view-teacher');
     
         }).catch((err)=>{
             alert('Something went Wrong!');
@@ -54,7 +54,7 @@ const EditTeacher=()=>{
         <div className='container forms'>
         <form onSubmit={e => submitForm(e) }>
             <div className='row'>
-                <div className='col-md-12 text-center'><h2>Edit Student</h2></div>
+                <div className='col-md-12 text-center'><h2>Edit Teacher</h2></div>
             </div>
 
             <div className='row'>
@@ -98,7 +98,7 @@ const EditTeacher=()=>{
             <div className='row'>
             <div className='col-md-2'></div>
             <div className='col-md-8 text-center'>
-                <button className='btn btn-warning' >Edit Teacher </button>         
+            <button className='btn btn-warning' >Edit Teacher </button>         
             </div>
             <div className='col-md-2'></div>
             </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams,Link } from "react-router-dom";
 import axios from "axios";
 
 
@@ -42,7 +42,7 @@ const EditStudent=()=>{
         .then((result)=>{
     
             setMessage("Successfully Updated");
-            history('/');
+            history('/view-student');
     
         }).catch((err)=>{
             alert('Something went Wrong!');
@@ -98,7 +98,7 @@ const EditStudent=()=>{
             <div className='row'>
             <div className='col-md-2'></div>
             <div className='col-md-8 text-center'>
-                <button className='btn btn-warning' >Edit Student</button>         
+            <td><button className='btn btn-warning' >Edit Student</button></td>         
             </div>
             <div className='col-md-2'></div>
             </div>

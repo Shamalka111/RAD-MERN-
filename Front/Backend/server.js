@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dbConfig =require('./db/database');
 const noteRoutes =require('./routes/note.router');
+const teacherRoutes =require('./routes/teacher.routes');
 
 
 mongoose.Promise =global.Promise;
@@ -34,6 +35,7 @@ const userRoute = require('./routes/student.routes')
 
 app.use('/admin', userRoute);
 app.use('/api/notes',noteRoutes);
+app.use('/teacher',teacherRoutes);
 
 const port = process.env.PORT || 8080;
 

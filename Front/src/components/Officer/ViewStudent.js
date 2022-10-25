@@ -54,7 +54,7 @@ const ViewStudent=()=>{
                         <td>{student.last_name}</td>
                         <td>{student.age}</td>
                         <td>{student.address}</td>
-                        <td><Link to ={`edit-student/${student._id}`} ><button className="btn btn-primary">EDIT</button></Link></td>
+                        <td><Link to ={`/edit-student/${student._id}`} ><button className="btn btn-primary">EDIT</button></Link></td>
                         <td><button className="btn btn-danger" onClick={()=>deleteuser(student._id)}>DELETE</button></td>
                     </tr>
                     ))

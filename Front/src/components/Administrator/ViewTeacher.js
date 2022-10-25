@@ -13,12 +13,12 @@ const ViewTeacher=()=>{
     )
 
     const loadTeacher=async()=>{
-        const result = await axios.get('http://localhost:8080/admin/teacher');
+        const result = await axios.get('http://localhost:8080/teacher/teacher');
         SetTeacher(result.data)
     }
 
     const deleteuser=async(id)=>{
-        const result = await axios.delete('http://localhost:8080/admin/del-teacher/'+id)
+        const result = await axios.delete('http://localhost:8080/teacher/del-teacher/'+id)
         .then((resul)=>{
                 loadTeacher()  
         }).catch(()=>{
@@ -52,15 +52,17 @@ const ViewTeacher=()=>{
                         <td>{teacher.last_name}</td>
                         <td>{teacher.age}</td>
                         <td>{teacher.address}</td>
-                        <td><Link to ={`edit-teacher/${teacher._id}`} ><button className="btn btn-primary">EDIT</button></Link></td>
+                        <td><Link to ={`/edit-teacher/${teacher._id}`} ><button className="btn btn-primary">EDIT</button></Link></td>
                         <td><button className="btn btn-danger" onClick={()=>deleteuser(teacher._id)}>DELETE</button></td>
                     </tr>
                     ))
                 }
             </tbody>
-
+                
         </table>
-        
+        <div>
+            <button className="btn btn-primary"><Link class="nav-link" to='/add-teacher' >Add Teacher</Link></button>
+        </div>
         </div>
     )
 }

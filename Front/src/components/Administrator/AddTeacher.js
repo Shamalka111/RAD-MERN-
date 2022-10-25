@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import axios from "axios";
 
 const AddTeacher=()=>{
@@ -23,7 +23,7 @@ const HandleChange=((e)=>{
 const submitForm= (e)=>{
     e.preventDefault();
     
-    axios.post('http://localhost:8080/admin/add-teacher',teacher)
+    axios.post('http://localhost:8080/teacher/add-teacher',teacher)
     .then((result)=>{
 
         console.log(result);
@@ -32,6 +32,7 @@ const submitForm= (e)=>{
 
     }).catch((err)=>{
         alert(err.message);
+        //console.log(err.message);
     });
 }   
     
@@ -87,10 +88,13 @@ return(
         <div className='row'>
         <div className='col-md-2'></div>
         <div className='col-md-8 text-center'>
-            <button className='btn btn-warning' >Add Teacher</button>         
+            <button className='btn btn-warning' >Add Teacher</button>
+            <br/><br/>
+            <button className="btn btn-primary"><Link class="nav-link" to='/view-teacher' >View Teacher</Link></button>         
         </div>
         <div className='col-md-2'></div>
         </div>
+        
         </form>
         </div>
 
