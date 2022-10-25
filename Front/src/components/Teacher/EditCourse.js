@@ -108,4 +108,4 @@ const EditCourse=()=>{
     )
 }
 
-export default EditCourses;
+export default EditCourse;

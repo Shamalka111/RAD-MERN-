@@ -1,28 +1,15 @@
 const mongoose = require('mongoose');
+const Schema =mongoose.Schema;
 
-const Schema = mongoose.Schema
+let noteSchema = new Schema({
 
-//create a schema
-const noteSchema = new Schema({
-    title : {
-         type : String,
-         required : true
+    title: {
+        type: String
     },
-    description : {
-         type : String,
-         required : true
-    },
-
-    category : {
-         type : String,
-         required : true
+    description: {
+        type: String
     }
-},
-{timestamps:true},
-{
-    collection: 'notes'
 }
-
 );
-//create  a model
-module.exports = mongoose.model('notes',noteSchema);
+
+module.exports = mongoose.model('NoteSchema', noteSchema)

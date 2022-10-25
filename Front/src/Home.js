@@ -12,6 +12,10 @@ import AddCourse from './components/Teacher/AddCourse';
 import ViewCourse from './components/Teacher/ViewCourse';
 import EditCourse from './components/Teacher/EditCourse';
 
+import AddNote from './components/Student/AddNote';
+import ViewNote from './components/Student/ViewNote';
+import EditNote from './components/Student/EditNote';
+
 import HomeMenu from './HomeMenu';   //css
 
 
@@ -29,6 +33,10 @@ const Home=()=>{
             <Route path="/edit-course/:id" element={<EditCourse/>} />
             <Route path="/add-course" element={<AddCourse/>} />
             <Route path="/view-course" element={<ViewCourse/>} />
+
+            <Route path="/view-notes/edit-note/:id" element={<EditNote/>} />
+            <Route path="/add-note" element={<AddNote/>} />
+            <Route path="/view-notes" element={<ViewNote/>} />
 
         </Routes>
 
