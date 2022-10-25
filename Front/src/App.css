@@ -8,6 +8,11 @@
 .forms .row{
   padding-bottom:20px;
 }
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
 
 
 
