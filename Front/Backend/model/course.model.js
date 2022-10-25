@@ -12,7 +12,7 @@ const CourseSchema = new Schema({
         required: true
     },
     duration : {
-        type : String
+        type : Number
     },
     conductedBy : {
         type : String

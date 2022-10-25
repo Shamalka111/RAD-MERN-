@@ -10,7 +10,7 @@ let noteSchema = new Schema({
         type: String
     }
 },{
-    collection : 'noteschemas' 
+    collation: 'noteschemas'
 }
 );
 

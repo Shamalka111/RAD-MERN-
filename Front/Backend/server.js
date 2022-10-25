@@ -6,9 +6,14 @@ const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dbConfig =require('./db/database');
+<<<<<<< HEAD
 const noteRoutes =require('./routes/note.router');
 const teacherRoutes =require('./routes/teacher.routes');
 const courseRoutes =require('./routes/course.routes');
+=======
+
+
+>>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
 
 
 mongoose.Promise =global.Promise;
@@ -31,11 +36,22 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 const userRoute = require('./routes/student.routes')
+<<<<<<< HEAD
 
 app.use('/admin', userRoute);
 app.use('/api/notes',noteRoutes);
 app.use('/teacher',teacherRoutes);
 app.use('/course',courseRoutes);
+=======
+const courseRoute = require('./routes/course.routes')
+const noteRoutes =require('./routes/note.router');
+//const gohome = require('./routes/home')
+
+
+app.use('/admin', userRoute);
+app.use('/notes',noteRoutes);
+app.use('/teacher', courseRoute);
+>>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
 
 const port = process.env.PORT || 8080;
 

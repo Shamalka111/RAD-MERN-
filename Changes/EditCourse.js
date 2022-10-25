@@ -108,4 +108,8 @@ const EditCourse=()=>{
     )
 }
 
+<<<<<<<< HEAD:Changes/EditCourse.js
 export default EditCourses;
+========
+export default EditCourse;
+>>>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff:Front/src/components/Teacher/EditCourse.js
