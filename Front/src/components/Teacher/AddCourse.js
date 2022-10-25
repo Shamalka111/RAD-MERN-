@@ -23,11 +23,7 @@ const HandleChange=((e)=>{
 const submitForm= (e)=>{
     e.preventDefault();
     
-<<<<<<< HEAD
     axios.post('http://localhost:8080/course/add-course',course)
-=======
-    axios.post('http://localhost:8080/teacher/add-course',course)
->>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
     .then((result)=>{
 
         console.log(result);
@@ -42,11 +38,6 @@ const submitForm= (e)=>{
 return(
 
         <div className='container forms'>
-<<<<<<< HEAD
-            {/* <button className="btn btn-primary"><Link class="nav-link" to='/view-course' >View Course</Link></button> */}
-=======
-            <button className="btn btn-primary"><Link class="nav-link" to='/view-course' >View Course</Link></button>
->>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
             <form onSubmit={e => submitForm(e)}>
         <div className='row'>
         <div className='col-md-12 text-center'><h2>Add Course</h2></div>
@@ -96,24 +87,17 @@ return(
         <div className='row'>
         <div className='col-md-2'></div>
         <div className='col-md-8 text-center'>
-<<<<<<< HEAD
             <button className='btn btn-warning' >Add Course</button> 
             <br/>
             <br/>
                     
-=======
-            <button className='btn btn-warning' >Add Course</button>         
->>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
         </div>
         <div className='col-md-2'></div>
         </div>
         </form>
-<<<<<<< HEAD
         <div>
         <button className="btn btn-primary"><Link class="nav-link" to='/view-course' >View Course</Link></button>
         </div>
-=======
->>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
         </div>
 
     )

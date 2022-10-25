@@ -10,11 +10,7 @@ const EditCourse=()=>{
     const [course, SetCourse]=useState((
         {
             'courseName':'',
-<<<<<<< HEAD
-            'noOfCredits':'',
-=======
             'noOfCredits':0,
->>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
             'duration': '',
             'conductedBy':'',
         }
@@ -31,11 +27,7 @@ const EditCourse=()=>{
     )
 
     const loadCourse=async()=>{
-<<<<<<< HEAD
         const result = await axios.get('http://localhost:8080/course/course/'+id);
-=======
-        const result = await axios.get('http://localhost:8080/teacher/course/'+id);
->>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
         SetCourse(result.data)
     }
    
@@ -46,19 +38,11 @@ const EditCourse=()=>{
     const submitForm=async(e)=>{
         e.preventDefault()
     
-<<<<<<< HEAD
         await axios.put('http://localhost:8080/course/update-course/'+id,course)
         .then((result)=>{
     
             setMessage("Successfully Updated");
             history('/view-course');
-=======
-        await axios.put('http://localhost:8080/teacher/update-course/'+id,course)
-        .then((result)=>{
-    
-            setMessage("Successfully Updated");
-            history('/');
->>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
     
         }).catch((err)=>{
             alert('Something went Wrong!');
@@ -124,13 +108,4 @@ const EditCourse=()=>{
     )
 }
 
-<<<<<<< HEAD
 export default EditCourse;
-
-=======
-<<<<<<<< HEAD:Changes/EditCourse.js
-export default EditCourses;
-========
-export default EditCourse;
->>>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff:Front/src/components/Teacher/EditCourse.js
->>>>>>> d11562d82dae9ff14a3cd6fa7e839e639020c4ff
