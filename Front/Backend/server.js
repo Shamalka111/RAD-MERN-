@@ -29,11 +29,13 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 const userRoute = require('./routes/student.routes')
+const courseRoute = require('./routes/course.routes')
 //const gohome = require('./routes/home')
 
 
 app.use('/admin', userRoute);
 app.use('/api/notes',noteRoutes);
+app.use('/teacher', courseRoute);
 
 const port = process.env.PORT || 8080;
 
